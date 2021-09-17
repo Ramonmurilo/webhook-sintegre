@@ -68,6 +68,7 @@ def webhook():
     data = request.json
 
     arquivo_nome = uniformiza_string(data['nome'])
+    print(data['dataProduto'])
     arquivo_data = pendulum.from_format(data['dataProduto'], 'DD/MM/YYYY', tz='America/Sao_Paulo')
 
     download_path = Path('download')
@@ -75,7 +76,7 @@ def webhook():
 
     resp=requests.get(data['url']).content
 
-    with open(f"{download_path}/{arquivo_nome}{arquivo_data.format('DD-MM-YYYY')}" , "wb") as arquivo_:
+    with open(f"{download_path}/{arquivo_nome}-{arquivo_data.format('DD-MM-YYYY')}" , "wb") as arquivo_:
         arquivo_.write(resp)
 
     return Response(status=200)

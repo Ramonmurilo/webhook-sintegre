@@ -1,5 +1,8 @@
 # Set base image (host OS)
-FROM python:3.8-alpine
+FROM python:3.8
+
+# Install datetime zones
+RUN apt-get -y update && apt-get install -y tzdata
 
 # By default, listen on port 5000
 EXPOSE 5000/tcp
