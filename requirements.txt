@@ -4,3 +4,4 @@ requests
 urllib3
 pendulum
 Werkzeug==2.0.1
+Unidecode==1.3.2

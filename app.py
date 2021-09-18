@@ -4,6 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from pathlib import Path
 import requests
 import pendulum
+from unidecode import unidecode
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
@@ -24,7 +25,7 @@ def uniformiza_string(string:str) -> str:
     """
 
     new_string = ''.join(filter(str.isalnum, string))
-    new_string = new_string.lower()
+    new_string = unidecode(new_string.lower())
 
     return new_string
 
