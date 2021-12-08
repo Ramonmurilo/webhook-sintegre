@@ -28,7 +28,7 @@ Webhook para download e consumo de dados do Sintegre-ONS. [Navegue pela document
 
 ## :warning: Pré-requisitos
 
-- Porta 5000 do Host liberada
+- Porta 5000, 443 e 80 do Host liberadas.
 - [Docker](https://docs.docker.com) (obrigatório)
 
 
